@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+*,
+::after,
+::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+  --font-family: 'Poppins', sans-serif;
+
+
+  /*  Colors */
+
+  /* Primary */
+
+  --Red: hsl(0, 100%, 74%); 
+  --Green: hsl(154, 59%, 51%);
+
+  /* Accent */
+
+  --Blue: hsl(248, 32%, 49%);
+
+ /* Neutral */
+
+  --Dark-Blue: hsl(249, 10%, 26%); 
+  --Grayish-Blue: hsl(246, 25%, 77%);
+
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: var(--Green);
+}
+
+
+body{
+  position: relative;
+  min-height: 100dvh;
+  font-family: var(--font-family);
+  background-image: url(./images/bg-intro-mobile.png);
+  background-color: var(--Red);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.container__gral {
+  padding: 2rem;
+  margin: 0 auto;
+  margin-top: 7rem;
+}
+
+
+.text__container {
+  text-align: center;
+}
+
+.text__container h1 {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.text__container p {
+  font-size: 1.3rem;
+  letter-spacing: .2rem;
+  margin-top: 2rem;
+  color: white;
+  font-weight: 500;
+  line-height: 2.5rem;
+}
+
+.price {
+  margin-top: 4rem;
+  border: 1px solid black;
+  font-size: 1.3rem;
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--Blue);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 10px 0px -2px #0000002b;
+  gap: .5rem;
+}
+
+
+
+.price > p > span{
+  font-weight: 700;
+}
+
+.price p {
+  letter-spacing: 1px;
+  color: white;
+}
+
+
+.container__form form{
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 10px 0px -2px #0000002b;
+  height: auto;
+}
+
+input {
+  width: 85%;
+  height: 50px;
+  margin-top: 2rem;
+  font-family: var(--font-family);
+  padding: 0 2rem;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1.8rem;
+}
+
+input:focus {
+  border: 1px solid black;
+  
+}
+
+input::placeholder{
+  color: var(--Dark-Blue);
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.active::placeholder {
+  content: url(./images/icon-error.svg);
+  position: absolute;
+  right: 15px;
+  
+}
+
+.border-alert {
+  border: 1px solid var(--Red);
+}
+.alert-div{
+  width: 85%;
+  text-align: end;
+}
+
+.hidden {
+  display: none;
+}
+
+.alert{
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: var(--Red);
+  font-weight: 500;
+  font-style: italic;
+  width: 85%;
+  text-align: end;
+}
+
+.btn {
+  width: 85%;
+  height: 50px;
+  margin-top: 2rem;
+  background: var(--Green);
+  border: none;
+  border-radius: 5px;
+  font-family: var(--font-family);
+  color: white;
+  text-transform: uppercase;  
+  font-weight: 600;
+  letter-spacing: .2rem;
+  box-shadow: 0px 3px 1px 1px #2bad76e0;
+  outline: none;
+}
+
+.terms {
+  margin-top: 2rem;
+  width: 70%;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.terms p{
+  color: var(--Grayish-Blue);
+  letter-spacing: .5px;
+}
+
+.terms-span a{
+  color: var(--Red);
+  font-weight: 800;
+}  
+
+footer {
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+}
+footer a {
+  color: var(--Dark-Blue);
+  font-weight: 800;
+}
+
+
+
+
+/* media RESPONSIVE */
+
+@media screen and (min-width:992px) and (max-width: 4135px){
+  
+  body{
+    background-image: url(./images/bg-intro-desktop.png);
+  }
+  
+  .container__gral{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 100px auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    'text-container price'
+    'text-container form';
+    margin: auto;
+    margin-top: 150px;
+  }
+
+  .text__container{
+    grid-area: text-container;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 200px;
+  }
+
+  .text__container h1{
+    font-size: 5rem;
+    text-align: start;
+  }
+
+  .text__container p{
+    /* width: 70%; */
+    text-align: start;
+  }
+
+  .price {
+    grid-area: price;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+  }
+
+
+  .container__form {
+    grid-area: form;
+    width:80%;
+  }
+}
+
